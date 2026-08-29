@@ -1,0 +1,53 @@
+{
+  "_comment": "iOA SVPN「可访问区域」策略结构示例(脱敏)。完整提取方法见 docs/research.md 第 8 节。",
+  "items": [
+    {
+      "connector_group_type": "native",
+      "type": "domain",
+      "connaddr": "lib.example.edu.cn",
+      "connport": "443;80",
+      "filterport": "1",
+      "internaldirect": "0",
+      "areaid": "100001",
+      "areamodule": "5000",
+      "smartgate_server": [
+        [
+          "ioa-XXXXXXXXXX.access.gateway.tencentwsd.cn:9443"
+        ]
+      ],
+      "name": "示例-图书馆资源"
+    },
+    {
+      "connector_group_type": "native",
+      "type": "ip",
+      "connaddr": "10.0.1.10",
+      "connport": "80",
+      "filterport": "1",
+      "internaldirect": "1",
+      "areaid": "100008",
+      "areamodule": "5011",
+      "smartgate_server": [
+        [
+          "ioa-XXXXXXXXXX.access.gateway.tencentwsd.cn:9443"
+        ]
+      ],
+      "name": "示例-校内Web"
+    },
+    {
+      "connector_group_type": "native",
+      "type": "ip",
+      "connaddr": "10.0.1.20-10.0.1.30",
+      "connport": "80;81;83;443;8725;8800;8888;8991",
+      "filterport": "1",
+      "internaldirect": "1",
+      "areaid": "100015",
+      "areamodule": "5022",
+      "smartgate_server": [
+        [
+          "ioa-XXXXXXXXXX.access.gateway.tencentwsd.cn:9443"
+        ]
+      ],
+      "name": "示例-数据中心网段"
+    }
+  ]
+}
